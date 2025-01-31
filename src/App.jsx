@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { getAllProducts } from "./services/product-services";
+import { BrowserRouter, Routes, Route } from "react-router";
 
 function App() {
-  useEffect(() => {
-    getAllProducts().then((data) => console.log(data));
-  }, []);
-
   return (
     <>
-      <h2>Hello, world!</h2>
+      <BrowserRouter>
+        <Routes></Routes>
+      </BrowserRouter>{" "}
     </>
   );
 }
