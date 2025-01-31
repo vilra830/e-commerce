@@ -23,7 +23,7 @@ const ProductsPage = () => {
 
   return (
     <>
-      <h1>Producst</h1>
+      <h1>Products</h1>
       {fetchStatus === "LOADING" && <p>Loading...</p>}
       {fetchStatus === "SUCCESS" && <ProductList products={products} />}
       {fetchStatus === "FAILURE" && <p>{error.message}</p>}

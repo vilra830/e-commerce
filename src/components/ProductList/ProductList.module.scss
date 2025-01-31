@@ -1,0 +1,12 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  ); // Creates responsive grid columns
+  gap: 20px;
+  justify-items: center;
+  padding: 40px;
+  height: 100vh;
+  align-items: center;
+}
