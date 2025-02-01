@@ -1,25 +1,11 @@
 import ProductList from "../../components/ProductList/ProductList";
 import { getAllProducts } from "../../services/product-services";
-import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { ProductsContext } from "../../context/ProductsContextProvider";
 
 //Loader component
 const ProductsPage = () => {
-  const [fetchStatus, setFetchStatus] = useState("PENDING");
-  const [products, setProducts] = useState([]);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    setFetchStatus("LOADING");
-    getAllProducts()
-      .then((data) => {
-        setProducts(data);
-        setFetchStatus("SUCCESS");
-      })
-      .catch((e) => {
-        setError(e);
-        setFetchStatus("FAILURE");
-      });
-  }, []);
+  const { fetchStatus, error, products } = useContext(ProductsContext);
 
   return (
     <>
