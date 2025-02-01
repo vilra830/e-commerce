@@ -22,9 +22,16 @@ const ProductsContextProvider = ({ children }) => {
       });
   }, []);
 
+  //add a function that returns a product using the id from Products Page SElection of Products
+  const getProductById = (id) => {
+    return products.find((product) => product.id === id);
+  };
+
   return (
     <>
-      <ProductsContext.Provider value={{ products, error, fetchStatus }}>
+      <ProductsContext.Provider
+        value={{ products, error, fetchStatus, getProductById }}
+      >
         {children}
       </ProductsContext.Provider>
     </>
