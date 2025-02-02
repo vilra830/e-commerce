@@ -1,12 +1,13 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+const apiKey = import.meta.env.VITE_FIREBASE_API_KEY;
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAyZiD0HMHAb5EXFJnp5cAXCHwVo4Tayag",
+  apiKey: apiKey,
   authDomain: "e-commerce-ebb6e.firebaseapp.com",
   projectId: "e-commerce-ebb6e",
   storageBucket: "e-commerce-ebb6e.firebasestorage.app",
