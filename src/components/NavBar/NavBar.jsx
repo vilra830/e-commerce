@@ -4,9 +4,9 @@ import classes from "./NavBar.module.scss";
 const NavBar = () => {
   return (
     <nav className={classes.navbar}>
-      <NavLink  to={"/"} className={({ isActive}) => isActive ? `{classes.navlink} {classes.active}` : classes.navlink} >Home </NavLink>
-      <NavLink to={"/products"} className={({ isActive}) => isActive ? `{classes.navlink} {classes.active}` : classes.navlink}  >Products </NavLink>
-      <NavLink  to={"/cart"} className={({ isActive}) => isActive ? `{classes.navlink} {classes.active}` : classes.navlink} >Cart</NavLink>
+      <NavLink  to={"/"} className={classes.navlink} >Home </NavLink>
+      <NavLink to={"/products"} className={classes.navlink}  >Food Menu </NavLink>
+      <NavLink  to={"/cart"} className={classes.navlink} >Cart</NavLink>
 
     </nav>
   );

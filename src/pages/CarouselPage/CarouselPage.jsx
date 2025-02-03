@@ -16,7 +16,7 @@ const CarouselPage = () => {
 
 return (
     <div>
-               <h1> Our Favourites</h1>
+               <h1 className={classes.h1}> Our Favourites</h1>
                {fetchStatus === "LOADING" && <Loading />}
                {fetchStatus === "FAILURE" && <p>{error.message}</p>}
 

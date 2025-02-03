@@ -1,7 +1,5 @@
 import { createContext, useState, useEffect } from "react";
 import { getAllProducts , updateOrder} from "../services/product-services";
-import ProductDetailsPage from "../pages/ProductDetailsPage/ProductDetailsPage";
-import CartPage from "../pages/CartPage/CartPage";
 
 export const ProductsContext = createContext(null);
 
@@ -10,6 +8,7 @@ const ProductsContextProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [cart, setCart] = useState([]);
+  const [productQuantity, setProductQuantity] = useState(0);
 
   useEffect(() => {
     setFetchStatus("LOADING");
@@ -34,22 +33,32 @@ const ProductsContextProvider = ({ children }) => {
 
   const addProductToCart = (product) => {
     setCart((currentCart) => {
+      //check if the product is in the cart 
       const productInCart = currentCart.find((item) => item.id === product.id);
       console.log("Is the product in the Cart?" + productInCart);
-      
+      //if it is in the cart, update its quantity by 1 
       if (productInCart) {
 
-        return currentCart.map((item) => item.id === product.id ? {...item, quantity: item.quantity +1} : item );
+        setProductQuantity(productInCart.quantity + 1);
+        return currentCart.map((item) => { 
 
+        if(item.id === product.id) {
+        return {...item, quantity: item.quantity +1};
+        }
+        return item;
+      });
 
       } else {
-        console.log(currentCart);
+
+        //add product into the cart with a quantity of 1 
+        console.log("Adding new Product:" , product);
+        setProductQuantity(1);
 
         return [...currentCart, {...product, quantity:1}];
       }
 
       
-    });
+   });
 
     
   }
@@ -65,7 +74,7 @@ const ProductsContextProvider = ({ children }) => {
   return (
     <>
       <ProductsContext.Provider
-        value={{ products, error, fetchStatus, cart, getProductById, addProductToCart , processOrder}}
+        value={{ products, error, fetchStatus, cart, getProductById, addProductToCart , processOrder , productQuantity}}
       >
         {children}
       </ProductsContext.Provider>

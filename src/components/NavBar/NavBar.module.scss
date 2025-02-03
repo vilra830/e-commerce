@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #d90429; 
+    
     padding: 1rem;
     display: flex;
     justify-content: center;
@@ -13,22 +13,24 @@
   }
   
   .navlink {
-    color: white; // or Warm yellow text
+    color: black; 
     font-size: 1.2rem;
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
   
     &:hover {
-      color: white; // White on hover
+      color: #d90429; // White on hover
       transform: scale(1.1);
+    }
+
+    &:active {
+      text-decoration: none;
+      color: red;
     }
   }
   
-  .active {
-    text-decoration: underline;
-    color: white;
-  }
+
 
   
   // Mobile styles

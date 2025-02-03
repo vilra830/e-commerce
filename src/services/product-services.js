@@ -12,23 +12,18 @@ export const getAllProducts = async () => {
 
 export const updateOrder = async (cart) => {
 
-  // export const updateMovieById = (id, newData) => {
-  //   const docRef = doc(db, 'movies', id);
-  //   return updateDoc(docRef, newData);
-  // };
-  for (const item of cart) { 
-  // cart.map((item) => {
-    const docRef = doc(db, 'products', item.id);
+  for (let i =0 ; i < cart.length ; i++) {
+
+    const docRef = doc(db, 'products', cart[i].id);
     const querySnapshot = await getDoc(docRef);
     const productQuantity =  querySnapshot.data().quantity;
-    const newProductQuantity = productQuantity - item.quantity;
+    const newProductQuantity = productQuantity - cart[i].quantity;
 
     await updateDoc(docRef, {quantity: newProductQuantity});
 
-
   };
-  
 }
+
 
   
 
