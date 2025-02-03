@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import { getAllProducts } from "../services/product-services";
+import { getAllProducts , updateOrder} from "../services/product-services";
 import ProductDetailsPage from "../pages/ProductDetailsPage/ProductDetailsPage";
 import CartPage from "../pages/CartPage/CartPage";
 
@@ -55,17 +55,16 @@ const ProductsContextProvider = ({ children }) => {
   }
 
   //process order - use async as this access firestore and we need to wait
-  const ProcessOrder = (cart) => {
-
-    
-    console.log("whats up?");
-
+  const processOrder = async () => {
+    updateOrder(cart);
+    setCart([]);
   }
+
 
   return (
     <>
       <ProductsContext.Provider
-        value={{ products, error, fetchStatus, cart, getProductById, addProductToCart , ProcessOrder}}
+        value={{ products, error, fetchStatus, cart, getProductById, addProductToCart , processOrder}}
       >
         {children}
       </ProductsContext.Provider>

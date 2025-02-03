@@ -2,6 +2,7 @@ import { ProductsContext } from "../../context/ProductsContextProvider";
 import { useContext } from "react";
 
 
+
 const CartPage = () => {
 
     const {cart , processOrder} = useContext(ProductsContext);
