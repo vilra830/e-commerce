@@ -6,6 +6,7 @@ import ProductDetailsPage from "./pages/ProductDetailsPage/ProductDetailsPage";
 import NavBar from "./components/NavBar/NavBar";
 import ProductsContextProvider from "./context/ProductsContextProvider";
 import CartPage from "./pages/CartPage/CartPage";
+import CarouselPage from "./pages/CarouselPage/CarouselPage";
 
 function App() {
   return (
@@ -14,15 +15,7 @@ function App() {
         <NavBar />
         <ProductsContextProvider>
           <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <h1>Landing Page</h1>
-                </>
-              }
-            />
-
+            <Route path="/" element={<CarouselPage /> } />
             <Route path="/products" element={<ProductsPage />} />
             <Route path="products/:id" element={<ProductDetailsPage />} />
             <Route path="/cart" element={<CartPage />}
