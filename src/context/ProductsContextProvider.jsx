@@ -58,6 +58,7 @@ const ProductsContextProvider = ({ children }) => {
   const processOrder = async () => {
     updateOrder(cart);
     setCart([]);
+    alert("Successfully processed");
   }
 
 
