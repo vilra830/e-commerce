@@ -5,6 +5,7 @@ import { ProductsContext } from "../../context/ProductsContextProvider";
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; 
 import Loading from "../../components/Loading/Loading.jsx";
 import classes from "./CarouselPage.module.scss";
+import { Link } from "react-router";
 
 
 const CarouselPage = () => {
@@ -26,9 +27,15 @@ return (
 
     {/* <Carousel transitionTime={200} emulateTouch useKeyboardArrows> */}
               {products.filter((product) => product.isFavourite).map((product) => ( 
-<div key={product.id} className={classes.slide}><img src={product.imageUrl} alt={product.name} className={classes.img}/> <p>{product.name}</p></div>  ))}
-            
 
+<div key={product.id} className={classes.slide}>
+<Link to={`/products/${product.id}`} className={classes.card}>
+<img src={product.imageUrl} alt={product.name} className={classes.img}/> <p>{product.name}</p>
+</Link>
+</div>  
+
+))}
+            
     </Carousel>
       )}
 
