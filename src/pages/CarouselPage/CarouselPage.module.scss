@@ -1,0 +1,28 @@
+@import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Import default styles
+
+.carousel {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slide {
+  background-color: transparent;
+}
+
+.image {
+  border-radius: 10px;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.h1 {
+
+  color: white;
+  font-size: xxx-large;
+  font-family: revert-layer;
+  text-align: center;
+  background-color: #d90429;
+  
+}

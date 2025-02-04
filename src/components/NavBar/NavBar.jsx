@@ -3,12 +3,17 @@ import classes from "./NavBar.module.scss";
 
 const NavBar = () => {
   return (
+
+    <div className={classes.wrapper}>
+      <img src="src\images\5.png" alt="logo"/>
     <nav className={classes.navbar}>
-      <NavLink  to={"/"} className={({ isActive}) => isActive ? `{classes.navlink} {classes.active}` : classes.navlink} >Home </NavLink>
-      <NavLink to={"/products"} className={({ isActive}) => isActive ? `{classes.navlink} {classes.active}` : classes.navlink}  >Products </NavLink>
-      <NavLink  to={"/cart"} className={({ isActive}) => isActive ? `{classes.navlink} {classes.active}` : classes.navlink} >Cart</NavLink>
+      
+      <NavLink  to={"/"} className={classes.navlink} >Home </NavLink>
+      <NavLink to={"/products"} className={classes.navlink}  >Food Menu </NavLink>
+      <NavLink  to={"/cart"} className={classes.navlink} >Cart</NavLink>
 
     </nav>
+    </div>
   );
 };
 

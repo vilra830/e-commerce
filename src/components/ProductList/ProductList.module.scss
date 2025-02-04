@@ -1,15 +1,4 @@
-// .list {
-//   display: grid;
-//   grid-template-columns: repeat(
-//     auto-fill,
-//     minmax(200px, 1fr)
-//   ); // Creates responsive grid columns
-//   gap: 20px;
-//   justify-items: center;
-//   padding: 40px;
-//   height: 100vh;
-//   align-items: center;
-// }
+
 
 .wrapper {
   display: grid;
@@ -18,7 +7,7 @@
 
   justify-items: center;
   width: 100%;
-  padding: 40px;
+  padding: 20px;
   // background-color: #98939e46;
   gap: 20px;
   align-items: center;

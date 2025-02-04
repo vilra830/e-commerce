@@ -10,7 +10,7 @@ const ProductsPage = () => {
 
   return (
     <div>
-      <h1>Products</h1>
+      <h1 className={classes.h1}>Products</h1>
       {fetchStatus === "LOADING" && <Loading />}
       {fetchStatus === "SUCCESS" && (
         // <div className={classes.wrapper}>
