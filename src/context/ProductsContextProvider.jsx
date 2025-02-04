@@ -28,6 +28,26 @@ const ProductsContextProvider = ({ children }) => {
     return products.find((product) => product.id === id);
   };
 
+  const removeItem = (product) => {
+
+      if (product.quantity === 1) {
+        
+        setCart((currentCart) => currentCart.filter((item) => item.id !== product.id)      
+      )
+    } else {
+
+      setCart((currentCart) => currentCart.map((item) => item.id === product.id ? {...item, quantity: item.quantity -1} : item
+    )
+  );
+    
+ 
+    }
+
+      
+
+    };
+
+
 
   //adds Product to Cart in Product Page - Cart should be able to access this information
 
@@ -74,7 +94,7 @@ const ProductsContextProvider = ({ children }) => {
   return (
     <>
       <ProductsContext.Provider
-        value={{ products, error, fetchStatus, cart, getProductById, addProductToCart , processOrder , productQuantity}}
+        value={{ products, error, fetchStatus, cart, getProductById, addProductToCart , processOrder , productQuantity, removeItem}}
       >
         {children}
       </ProductsContext.Provider>
