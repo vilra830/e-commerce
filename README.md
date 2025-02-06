@@ -36,4 +36,14 @@ Fetching data from Firestore - f
 - more styling
 - testing
 - add more features
+- separate the cart context provider and product provider to make code easier to read and understand.
+- use query hooks to replace clunkier code with a few lines of code
+  
+  
+
+  ## Known bugs that will be dealt with in the future
+  - When quantity is clicked, the quantity prop is shared among all products. It should stay with the individual product selected.
+  - No checking of quantity when user clicks more than the available stock. A condition should be added to check if the number of product quantity is more than the number of stock. It should disable the button when it goes beyond 
+  - Logo does not appear sometimes.
+  - 
   
